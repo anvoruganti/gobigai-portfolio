@@ -23,46 +23,43 @@ const sections = ["hero", "services", "work", "case-studies", "stack", "about", 
 
 const services = [
   {
-    title: "Agentic AI Systems",
+    title: "AI Advisory & Roadmaps",
     description:
-      "LangChain, CrewAI, and custom tools stitched into autonomous flows that prospect, summarize, and execute like a full-time analyst.",
-    icon: <Brain size={36} />,
-    palette: "bg-[#E0E7FF]",
+      "Executive-ready plans, AI governance, and ROI models that keep compliance, security, and GTM in the same room.",
+    icon: <Brain size={32} />,
   },
   {
-    title: "Enterprise Data Platforms",
+    title: "Agentic Delivery Pods",
     description:
-      "Design-first ETL/ELT, dbt governance, and observability that keep multi-marketplaces humming on AWS, Snowflake, and Terraform.",
-    icon: <Database size={36} />,
-    palette: "bg-[#FFD6E0]",
+      "CrewAI + LangChain agents that watch pipelines, listen to customers, and trigger workflows across HubSpot, Slack, and Snowflake.",
+    icon: <Code size={32} />,
   },
   {
-    title: "Full-Stack Delivery",
+    title: "Data Platforms for LLMs",
     description:
-      "React front-ends + Python/Java services with CI/CD. Deployed on Vercel, AWS, or custom infra so clients get value on day one.",
-    icon: <Code size={36} />,
-    palette: "bg-[#D1FAE5]",
+      "Snowflake, dbt, and Bedrock stacks with monitoring, feature stores, and retrieval layers tuned for regulated data.",
+    icon: <Database size={32} />,
   },
 ];
 
 const experiences = [
   {
-    role: "GenAI Consultant",
-    company: "goBIGai / Freelance",
+    role: "Founder & Principal Consultant",
+    company: "goBIGai",
     timeframe: "2024 — Present",
     bullets: [
-      "Translating Data Lumina frameworks into sellable playbooks for founders and growth teams.",
-      "Built autonomous lead-mining copilots that read RFPs, enrich contacts, and push to HubSpot.",
-      "Designed RAG stacks that combine Snowflake, Bedrock, and lightweight vector stores for regulated data.",
+      "Fractional AI team for revenue leaders: lead intelligence, proposal co-pilots, and post-sales automation.",
+      "Mapped Data Lumina playbooks into packaged offers with measurable lift for GTM, RevOps, and product squads.",
+      "Delivered agentic workflows that harvest signals, enrich contacts, and keep human review in the loop.",
     ],
-    highlight: "CURRENT",
+    highlight: "ACTIVE",
   },
   {
     role: "Data Engineer",
     company: "Amazon (Seattle)",
     timeframe: "2021 — 2023",
     bullets: [
-      "Scaled 20+ Step Function powered pipelines across 30 marketplaces while cutting runtime costs by $5K per pipeline.",
+      "Scaled Step Function pipelines across 30 marketplaces while cutting runtime costs by $5K per workflow.",
       "Exposed monitoring and remediation via Java REST services, reducing manual resolution time by 25 minutes.",
       "Partnered with product to automate catalog scoring across Kindle, Audible, and Games businesses.",
     ],
@@ -84,7 +81,7 @@ const caseStudies = [
     title: "Revenue Ops Agent",
     metric: "+37% qualified demos",
     description:
-      "CrewAI multi-agent system that scrapes founder podcasts, extracts buying signals, and fires bespoke Loom recaps via n8n.",
+      "Multi-agent system that scrapes founder podcasts, extracts buying signals, and fires bespoke Loom recaps via n8n.",
   },
   {
     title: "Compliance RAG",
@@ -93,7 +90,7 @@ const caseStudies = [
       "Snowflake + Bedrock Titan powering legal-grade document recall with guardrails mapped to SOC 2 requirements.",
   },
   {
-    title: "Gaming Pulse",
+    title: "Product Pulse",
     metric: "30M events / day",
     description:
       "Kafka + dbt + Looker telemetry platform that keeps churn, ARPU, and fraud insights real-time for product leads.",
@@ -169,27 +166,32 @@ export default function Home() {
   };
 
   return (
-    <div className={`relative min-h-screen bg-[#f0f0f0] ${isLoaded ? "opacity-100" : "opacity-0"} transition-opacity duration-700`}>
+    <div
+      className={`relative min-h-screen bg-gradient-to-b from-[#040915] via-[#050b1d] to-[#0b152c] text-slate-100 ${
+        isLoaded ? "opacity-100" : "opacity-0"
+      } transition-opacity duration-700`}
+    >
       <div className="noise-overlay" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(64,179,255,0.12)_0,transparent_30%),radial-gradient(circle_at_80%_0,rgba(124,58,237,0.12)_0,transparent_25%),radial-gradient(circle_at_80%_70%,rgba(34,197,94,0.1)_0,transparent_25%)]" />
 
-      <nav className="fixed top-0 left-0 z-50 w-full border-b-4 border-black bg-white/95 px-4 py-3 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
+      <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[#050915]/70 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <button
             onClick={() => scrollTo("hero")}
-            className="text-2xl font-black tracking-tight transition-transform hover:-skew-x-6"
+            className="text-2xl font-black tracking-tight text-white transition hover:text-cyan-300"
           >
-            goBIGai<span className="text-[#ff3366]">.</span>org
+            goBIGai<span className="text-cyan-400">.</span>org
           </button>
-          <div className="hidden gap-4 text-sm font-bold uppercase md:flex">
+          <div className="hidden gap-3 text-xs font-semibold uppercase tracking-widest md:flex">
             {sections.slice(1).map((section) => (
               <button
                 key={section}
                 type="button"
                 onClick={() => scrollTo(section)}
-                className={`border-2 px-3 py-1 transition-all ${
+                className={`rounded-full border px-3 py-1 transition ${
                   activeSection === section
-                    ? "border-black bg-[#ccff00]"
-                    : "border-transparent hover:border-black"
+                    ? "border-cyan-300/80 bg-cyan-300/10 text-cyan-100"
+                    : "border-transparent text-slate-300 hover:border-cyan-300/40 hover:text-white"
                 }`}
               >
                 {section.replace("-", " ").toUpperCase()}
@@ -198,114 +200,110 @@ export default function Home() {
           </div>
           <button
             onClick={() => scrollTo("contact")}
-            className="flex items-center gap-2 border-4 border-black bg-[#ff3366] px-4 py-2 text-sm font-black text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+            className="flex items-center gap-2 rounded-full border border-cyan-300/80 bg-cyan-500/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-cyan-100 shadow-[0_10px_40px_rgba(34,211,238,0.25)] transition hover:-translate-y-0.5 hover:bg-cyan-500/30"
           >
-            <Send size={16} />
-            Hire me
+            <Send size={14} /> Book a call
           </button>
         </div>
       </nav>
 
       <main className="pt-24">
-        <section
-          id="hero"
-          className="relative flex min-h-screen items-center border-b-4 border-black bg-[#ccff00] px-4 py-24"
-        >
+        <section id="hero" className="relative overflow-hidden px-4 py-24">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
-            <div className="inline-flex w-fit items-center gap-2 border-2 border-black bg-black px-4 py-1 text-lg font-black text-white">
-              <Sparkles size={20} /> Data Lumina Certified • goBIGai Founder
+            <div className="flex flex-wrap items-center gap-3 text-sm font-mono uppercase tracking-[0.3em] text-cyan-200/70">
+              <Sparkles size={16} /> AI Consulting for data-rich teams
             </div>
-            <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]">
-              Building
-              <span className="mx-3 inline-block bg-gradient-to-r from-[#ff3366] via-[#ff8800] to-[#3366ff] px-4 py-1 text-transparent"
-                style={{ WebkitTextStroke: "3px black", WebkitTextFillColor: "transparent" }}
-              >
-                intelligent
-              </span>
-              data & AI systems that sell themselves.
+            <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+              We design, ship, and scale AI systems that keep revenue teams ahead of the signal.
             </h1>
-            <p className="max-w-3xl border-l-8 border-black bg-white/60 p-6 text-lg font-semibold leading-relaxed">
-              I am Anirudh Voruganti — data engineer turned GenAI consultant. From Amazon-scale pipelines to boutique
-              founders looking for their first AI co-pilot, I architect neo-brutalist experiences that turn messy data
-              into deal flow.
+            <p className="max-w-3xl text-lg text-slate-300">
+              goBIGai is an AI consulting studio led by Anirudh Voruganti. We blend advisory, build squads, and production
+              operations so leaders can deploy agentic workflows, safer RAG, and observability without pausing the business.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <button
-                onClick={() => scrollTo("work")}
-                className="flex items-center justify-center gap-3 border-4 border-black bg-white px-6 py-4 text-xl font-black shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1"
+                onClick={() => scrollTo("services")}
+                className="flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 px-6 py-4 text-lg font-black text-[#050915] shadow-[0_20px_60px_rgba(56,189,248,0.35)] transition hover:-translate-y-1"
               >
-                View track record
+                Explore offerings
                 <ArrowRight />
               </button>
               <button
-                onClick={() => scrollTo("services")}
-                className="border-4 border-black bg-[#3366ff] px-6 py-4 text-xl font-black text-white shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1"
+                onClick={() => scrollTo("work")}
+                className="flex items-center justify-center gap-3 rounded-full border border-white/20 px-6 py-4 text-lg font-semibold text-white transition hover:border-cyan-300/70 hover:text-cyan-100"
               >
-                Explore solutions
+                View credibility
               </button>
             </div>
             <div className="grid gap-6 sm:grid-cols-3">
               {stats.map((stat) => (
-                <div key={stat.label} className="border-4 border-black bg-white p-4 text-center shadow-[6px_6px_0px_rgba(0,0,0,1)]">
-                  <div className="text-4xl font-black">{stat.value}</div>
-                  <p className="text-sm font-bold uppercase tracking-wide">{stat.label}</p>
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur"
+                >
+                  <div className="text-4xl font-black text-cyan-200">{stat.value}</div>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">{stat.label}</p>
                 </div>
               ))}
             </div>
           </div>
           <button
             onClick={() => scrollTo("services")}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce rounded-full border border-white/20 bg-white/5 p-3 text-slate-200"
             aria-label="scroll to services"
           >
-            <ChevronDown size={48} />
+            <ChevronDown size={32} />
           </button>
         </section>
 
-        <section id="services" className="border-b-4 border-black bg-white px-4 py-24">
+        <section id="services" className="border-t border-white/5 bg-[#070d1c]/60 px-4 py-24">
           <div className="mx-auto max-w-6xl">
-            <h2 className="mb-16 flex items-center gap-4 text-4xl font-black uppercase sm:text-6xl">
-              <Zap className="text-[#ff3366]" size={56} /> What I ship
+            <h2 className="mb-12 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl">
+              <Zap className="text-cyan-300" size={42} /> Consulting Offers
             </h2>
             <div className="grid gap-8 md:grid-cols-3">
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className={`${service.palette} border-4 border-black p-6 shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-2`}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur"
                 >
-                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center border-2 border-black bg-black text-white">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 via-cyan-400/10 to-purple-500/10 opacity-0 transition group-hover:opacity-100" />
+                  <div className="relative mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-cyan-500/15 text-cyan-200">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-black">{service.title}</h3>
-                  <p className="mt-4 text-lg font-medium leading-relaxed">{service.description}</p>
+                  <h3 className="relative text-2xl font-black text-white">{service.title}</h3>
+                  <p className="relative mt-4 text-base text-slate-300 leading-relaxed">{service.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="work" className="border-b-4 border-black bg-[#ff3366] px-4 py-24 text-white">
+        <section id="work" className="border-t border-white/5 bg-[#050915]/80 px-4 py-24">
           <div className="mx-auto max-w-6xl">
-            <h2 className="mb-12 flex items-center gap-4 text-4xl font-black uppercase sm:text-6xl">
-              <Briefcase className="text-black" size={56} /> Track record
+            <h2 className="mb-10 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl">
+              <Briefcase className="text-cyan-300" size={42} /> Track record
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-6">
               {experiences.map((experience) => (
                 <article
                   key={experience.role}
-                  className="relative border-4 border-black bg-white p-8 text-black shadow-[12px_12px_0px_rgba(0,0,0,1)]"
+                  className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 via-white/3 to-white/10 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.4)]"
                 >
                   {experience.highlight && (
-                    <div className="absolute right-0 top-0 border-l-4 border-b-4 border-black bg-black px-4 py-2 text-xs font-black text-white">
+                    <div className="absolute right-4 top-4 rounded-full border border-cyan-300/40 bg-cyan-500/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-cyan-100">
                       {experience.highlight}
                     </div>
                   )}
                   <h3 className="text-3xl font-black">{experience.role}</h3>
-                  <div className="text-xl font-bold text-[#3366ff]">{experience.company}</div>
-                  <p className="text-sm font-mono uppercase tracking-widest text-gray-500">{experience.timeframe}</p>
-                  <ul className="mt-4 list-disc space-y-2 pl-6 text-lg font-medium marker:text-[#ff3366]">
+                  <div className="text-lg font-semibold text-cyan-200">{experience.company}</div>
+                  <p className="text-xs font-mono uppercase tracking-widest text-slate-400">{experience.timeframe}</p>
+                  <ul className="mt-4 space-y-2 text-base text-slate-200">
                     {experience.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
+                      <li key={bullet} className="flex items-start gap-2">
+                        <span className="mt-1 h-2 w-2 rounded-full bg-cyan-300" />
+                        <span>{bullet}</span>
+                      </li>
                     ))}
                   </ul>
                 </article>
@@ -314,49 +312,49 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="case-studies" className="border-b-4 border-black bg-[#050505] px-4 py-24 text-white">
+        <section id="case-studies" className="border-t border-white/5 bg-[#060d1b] px-4 py-24">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="text-sm font-mono uppercase tracking-[0.3em] text-[#ccff00]">Proof</p>
-                <h2 className="text-4xl font-black uppercase sm:text-6xl">Deployments with teeth</h2>
+                <p className="text-xs font-mono uppercase tracking-[0.3em] text-cyan-200/70">Proof</p>
+                <h2 className="text-4xl font-black uppercase sm:text-5xl">Deployments with teeth</h2>
               </div>
               <a
                 href="https://linkedin.com/in/anirudh-voruganti"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-white px-4 py-2 text-sm font-black uppercase tracking-wide"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white transition hover:border-cyan-300/60"
               >
                 Full resume
-                <ExternalLink size={18} />
+                <ExternalLink size={16} />
               </a>
             </div>
             <div className="mt-12 grid gap-8 md:grid-cols-3">
               {caseStudies.map((study) => (
                 <div
                   key={study.title}
-                  className="border-4 border-white/60 bg-[#111] p-6 shadow-[6px_6px_0px_rgba(204,255,0,0.6)]"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                 >
-                  <p className="text-sm font-mono uppercase tracking-wide text-[#ff3366]">{study.metric}</p>
-                  <h3 className="mt-2 text-2xl font-black">{study.title}</h3>
-                  <p className="mt-4 text-lg text-gray-200">{study.description}</p>
+                  <p className="text-xs font-mono uppercase tracking-wide text-cyan-200">{study.metric}</p>
+                  <h3 className="mt-2 text-2xl font-black text-white">{study.title}</h3>
+                  <p className="mt-3 text-base text-slate-300 leading-relaxed">{study.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="stack" className="border-b-4 border-black bg-[#3366ff] px-4 py-24">
-          <div className="mx-auto max-w-6xl text-center text-white">
-            <h2 className="text-4xl font-black uppercase sm:text-6xl">The Arsenal</h2>
-            <p className="mx-auto mt-4 max-w-3xl text-lg font-semibold text-blue-100">
-              Tooling I use daily across consulting retainers: automation, experimentation, infra-as-code, and human-in-the-loop workflows.
+        <section id="stack" className="border-t border-white/5 bg-[#050915] px-4 py-24">
+          <div className="mx-auto max-w-6xl text-center">
+            <h2 className="text-4xl font-black uppercase sm:text-5xl">Stack I rely on</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
+              Tooling across automation, experimentation, infra-as-code, and human-in-the-loop workflows for AI consulting retainers.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
               {stack.map((skill) => (
                 <span
                   key={skill}
-                  className="border-4 border-black bg-[#ccff00] px-6 py-3 text-lg font-black text-black shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+                  className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-100 shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
                 >
                   {skill}
                 </span>
@@ -365,42 +363,39 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="border-b-4 border-black bg-[#f0f0f0] px-4 py-24">
+        <section id="about" className="border-t border-white/5 bg-[#070d1c] px-4 py-24">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
-            <div className="border-4 border-black bg-white p-8 shadow-[12px_12px_0px_rgba(0,0,0,1)]">
-              <h2 className="text-4xl font-black uppercase">About Anirudh</h2>
-              <p className="mt-6 text-lg font-medium leading-relaxed">
-                I blend an engineer’s love for distributed systems with a marketer’s need for velocity. Whether it’s shipping an
-                AWS-native data mesh or crafting a Loom-ready narrative for a founder, goBIGai is the studio where both worlds meet.
-                Currently progressing through the Data Lumina Freelancer curriculum to scale a boutique practice focused on
-                measurable GenAI outcomes.
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.4)]">
+              <h2 className="text-4xl font-black uppercase">About goBIGai</h2>
+              <p className="mt-6 text-lg text-slate-300 leading-relaxed">
+                I blend an engineer’s love for distributed systems with a marketer’s need for velocity. Whether it’s shipping an AWS-native data mesh or crafting a Loom-ready narrative for a founder, goBIGai is the studio where both worlds meet. Currently progressing through the Data Lumina Freelancer curriculum to scale a boutique practice focused on measurable GenAI outcomes.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4 text-sm font-mono uppercase">
-                <span className="border-2 border-black bg-[#ccff00] px-4 py-2">Hyderabad → Boston → Global clients</span>
-                <span className="border-2 border-black bg-white px-4 py-2">Remote-first</span>
-                <span className="border-2 border-black bg-white px-4 py-2">Time-to-value &lt; 3 weeks</span>
+              <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-200">
+                <span className="rounded-full border border-cyan-300/30 bg-cyan-500/10 px-4 py-2">Hyderabad → Boston → Global</span>
+                <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2">Remote-first</span>
+                <span className="rounded-full border border-white/15 bg-white/5 px-4 py-2">Time-to-value &lt; 3 weeks</span>
               </div>
             </div>
             <div className="space-y-6">
-              <div className="border-4 border-black bg-[#fffaf0] p-8 shadow-[8px_8px_0px_rgba(0,0,0,1)]">
-                <h3 className="flex items-center gap-3 text-2xl font-black">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                <h3 className="flex items-center gap-3 text-2xl font-black text-white">
                   <GraduationCap /> Education
                 </h3>
                 <div className="mt-6 space-y-4">
                   {education.map((item) => (
-                    <div key={item.program} className="border-l-4 border-[#ff3366] pl-4">
+                    <div key={item.program} className="border-l-2 border-cyan-400/60 pl-4">
                       <p className="text-xl font-black">{item.program}</p>
-                      <p className="text-lg font-semibold text-gray-600">{item.school}</p>
-                      <p className="text-sm font-mono text-gray-500">{item.year}</p>
+                      <p className="text-lg font-semibold text-slate-300">{item.school}</p>
+                      <p className="text-xs font-mono uppercase tracking-widest text-slate-400">{item.year}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="border-4 border-black bg-[#e0e7ff] p-8 shadow-[8px_8px_0px_rgba(0,0,0,1)]">
-                <h3 className="flex items-center gap-3 text-2xl font-black">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                <h3 className="flex items-center gap-3 text-2xl font-black text-white">
                   <Terminal /> Recent drops
                 </h3>
-                <ul className="mt-6 space-y-3 text-lg font-medium">
+                <ul className="mt-4 space-y-3 text-base text-slate-200">
                   <li>Podcast intelligence bot for a fintech CMO, built with Whisper + GPT-4o.</li>
                   <li>Sales room command center that syncs Notion, Slack, and Airtable in real-time.</li>
                   <li>dbt-powered revenue dashboards for a global gaming leader.</li>
@@ -410,18 +405,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="bg-black px-4 py-24 text-white">
+        <section id="contact" className="border-t border-white/5 bg-gradient-to-b from-[#050915] to-[#03060f] px-4 py-24">
           <div className="mx-auto max-w-5xl text-center">
-            <p className="text-sm font-mono uppercase tracking-[0.4em] text-[#ccff00]">Ready when you are</p>
-            <h2 className="mt-4 text-5xl font-black uppercase sm:text-7xl">Let’s build.</h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold text-gray-300">
-              Whether you need a skunkworks AI pod, marketing ops automation, or reliable data foundations, goBIGai is open for business.
-              Drop a note, connect on LinkedIn, or peek into the GitHub experiments.
+            <p className="text-xs font-mono uppercase tracking-[0.35em] text-cyan-200/70">Ready when you are</p>
+            <h2 className="mt-4 text-5xl font-black uppercase sm:text-6xl">Let’s build responsibly.</h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-300">
+              Whether you need a skunkworks AI pod, marketing ops automation, or reliable data foundations, goBIGai consults, ships, and operates with you. Drop a note, connect on LinkedIn, or peek into the GitHub experiments.
             </p>
-            <div className="mt-12 flex flex-col items-center justify-center gap-4 md:flex-row">
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 md:flex-row">
               <a
                 href="mailto:founder@gobigai.org"
-                className="flex w-full items-center justify-center gap-3 border-4 border-transparent bg-white px-6 py-4 text-lg font-black text-black transition-colors hover:border-white hover:bg-[#ff3366] hover:text-white md:w-auto"
+                className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 px-6 py-4 text-lg font-black text-[#050915] shadow-[0_25px_80px_rgba(56,189,248,0.35)] transition hover:-translate-y-1 md:w-auto"
               >
                 <Mail /> founder@gobigai.org
               </a>
@@ -429,7 +423,7 @@ export default function Home() {
                 href="https://linkedin.com/in/anirudh-voruganti"
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center gap-3 border-4 border-transparent bg-[#0a66c2] px-6 py-4 text-lg font-black text-white transition-colors hover:bg-white hover:text-[#0a66c2] md:w-auto"
+                className="flex w-full items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-4 text-lg font-bold text-white transition hover:border-cyan-300/60 hover:text-cyan-100 md:w-auto"
               >
                 <Linkedin /> LinkedIn
               </a>
@@ -437,12 +431,12 @@ export default function Home() {
                 href="https://github.com/anvoruganti"
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center gap-3 border-4 border-transparent bg-[#333] px-6 py-4 text-lg font-black text-white transition-colors hover:bg-white hover:text-black md:w-auto"
+                className="flex w-full items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-4 text-lg font-bold text-white transition hover:border-cyan-300/60 hover:text-cyan-100 md:w-auto"
               >
                 <Github /> GitHub
               </a>
             </div>
-            <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-6 text-xs font-bold uppercase tracking-wide text-gray-400 sm:flex-row">
+            <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs font-bold uppercase tracking-wide text-slate-400 sm:flex-row">
               <span>© {new Date().getFullYear()} goBIGai.org</span>
               <span>Hyderabad • Boston • Remote</span>
               <span>Powered by Vercel + Next.js</span>
