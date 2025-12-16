@@ -14,21 +14,21 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gobigai.org"),
-  title: "goBIGai • Neo-Brutalist Data & AI Portfolio",
+  title: "goBIGai • AI Consulting & Data Systems",
   description:
-    "Anirudh Voruganti crafts neo-brutalist AI systems, data platforms, and agentic workflows for goBIGai clients.",
+    "Anirudh Voruganti runs an AI consulting firm crafting production-grade agents, data platforms, and GTM automation.",
   openGraph: {
-    title: "goBIGai • Anirudh Voruganti",
+    title: "goBIGai • AI Consulting & Data Systems",
     description:
-      "Portfolio of Anirudh Voruganti – Data Lumina certified consultant building agentic AI, RAG systems, and scalable data stacks.",
+      "AI consulting studio led by Anirudh Voruganti delivering agentic systems, RAG, and enterprise-grade data stacks.",
     url: "https://gobigai.org",
     siteName: "goBIGai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "goBIGai – Anirudh Voruganti",
+    title: "goBIGai – AI Consulting",
     description:
-      "Data engineer turned AI consultant delivering agentic workflows, RAG, and production data platforms.",
+      "AI consultant delivering agentic workflows, RAG, and production data platforms for revenue and data leaders.",
   },
 };
 

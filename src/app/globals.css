@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #040915;
-  --foreground: #e2e8f0;
+  --background: #f4f7ff;
+  --foreground: #0b1225;
 }
 
 @theme inline {
@@ -17,9 +17,9 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(129, 140, 248, 0.08), transparent 30%),
-    linear-gradient(180deg, #040915, #050b1d 40%, #0b152c);
+  background: radial-gradient(circle at 12% 20%, rgba(20, 241, 217, 0.12), transparent 36%),
+    radial-gradient(circle at 85% 10%, rgba(122, 91, 255, 0.14), transparent 38%),
+    linear-gradient(180deg, #f8fbff, #eef2ff 45%, #e6f7ff);
   color: var(--foreground);
   font-family: var(--font-grotesk), "Space Grotesk", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -27,8 +27,8 @@ body {
 }
 
 ::selection {
-  background: #22d3ee;
-  color: #0b152c;
+  background: #14f1d9;
+  color: #0b1225;
 }
 
 .noise-overlay {
