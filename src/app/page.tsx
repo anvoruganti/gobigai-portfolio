@@ -24,118 +24,150 @@ const sections = ["hero", "services", "work", "case-studies", "stack", "about", 
 
 const services = [
   {
-    title: "AI Advisory & Roadmaps",
+    title: "Workflow Discovery & Impact Modeling",
     description:
-      "Executive-ready plans, AI governance, and ROI models that keep compliance, security, and GTM in the same room.",
+      "Pinpoint the exact workflows where AI can remove manual effort and unlock compounding leverage.",
     icon: <Brain size={32} />,
   },
   {
-    title: "Agentic Delivery Pods",
+    title: "RAG & LLM Applications",
     description:
-      "CrewAI + LangChain agents that watch pipelines, listen to customers, and trigger workflows across HubSpot, Slack, and Snowflake.",
+      "Design AI copilots that answer questions from your private data with speed, accuracy, and auditability.",
+    icon: <Database size={32} />,
+  },
+  {
+    title: "AI Agents & Automation",
+    description:
+      "Deploy agents that coordinate tasks across tools so work keeps moving without constant human intervention.",
     icon: <Code size={32} />,
   },
   {
-    title: "Data Platforms for LLMs",
+    title: "Document Extraction Systems",
     description:
-      "Snowflake, dbt, and Bedrock stacks with monitoring, feature stores, and retrieval layers tuned for regulated data.",
-    icon: <Database size={32} />,
+      "Convert PDFs and unstructured files into clean, structured data that flows into your core systems.",
+    icon: <Terminal size={32} />,
+  },
+  {
+    title: "Cloud-Native Deployment & Monitoring",
+    description:
+      "Ship reliable, scalable AI systems with observability, safety, and long-term maintainability.",
+    icon: <Zap size={32} />,
   },
 ];
 
 const experiences = [
   {
-    role: "Founder & Principal Consultant",
+    role: "Founder & Principal AI Consultant",
     company: "goBIGai",
-    timeframe: "2024 — Present",
+    timeframe: "Jan 2025 — Present",
     bullets: [
-      "Fractional AI team for revenue leaders: lead intelligence, proposal co-pilots, and post-sales automation.",
-      "Mapped Data Lumina playbooks into packaged offers with measurable lift for GTM, RevOps, and product squads.",
-      "Delivered agentic workflows that harvest signals, enrich contacts, and keep human review in the loop.",
+      "Deliver production-grade RAG pipelines and AI agents tailored to domain-specific enterprise workflows.",
+      "Built a document parser platform that cut review time by ~90% for an education client handling massive repositories.",
+      "Implemented an n8n + LinkedIn sales automation agent that drives intelligent follow-ups and pipeline visibility.",
+      "Led discovery, architecture, and deployments across AWS, GCP, Vercel, and Supabase for multi-stakeholder teams.",
     ],
     highlight: "ACTIVE",
   },
   {
-    role: "Data Engineer",
-    company: "Amazon (Seattle)",
-    timeframe: "2021 — 2023",
+    role: "Software Engineer",
+    company: "Amazon.com (Seattle)",
+    timeframe: "Jun 2022 — Jan 2023",
     bullets: [
-      "Scaled Step Function pipelines across 30 marketplaces while cutting runtime costs by $5K per workflow.",
-      "Exposed monitoring and remediation via Java REST services, reducing manual resolution time by 25 minutes.",
-      "Partnered with product to automate catalog scoring across Kindle, Audible, and Games businesses.",
+      "Orchestrated 20+ ETL pipelines across 30 marketplaces using AWS Step Functions to optimize supply chain flows.",
+      "Delivered Java REST APIs and CI/CD automation that improved recovery time and boosted pipeline reliability.",
+      "Built a Python Step Functions proof-of-concept that reduced runtime by 60% and saved ~$5K per pipeline monthly.",
     ],
   },
   {
     role: "Senior Data Analyst",
-    company: "Games24x7",
-    timeframe: "2019 — 2021",
+    company: "Games24x7 Pvt Ltd",
+    timeframe: "Sep 2020 — Aug 2021",
     bullets: [
-      "Led monetization experiments that boosted ARPU 12% across India’s leading real-money gaming titles.",
-      "Delivered Glue/Athena/Redshift optimizations and modernized Tableau governance.",
-      "Mentored a distributed analytics pod focused on user safety and fraud.",
+      "Led analytics that shaped product roadmaps for India’s largest gaming company, improving ARPU by 12%.",
+      "Built SQL-heavy insight layers in MySQL and Presto to improve operational decision-making.",
+      "Optimized AWS Glue, Athena, and Redshift pipelines to accelerate reporting and Tableau delivery.",
+    ],
+  },
+  {
+    role: "Data Analyst – Research Fellow",
+    company: "IIT Bombay",
+    timeframe: "Oct 2019 — Apr 2020",
+    bullets: [
+      "Built an 85%-accurate plant disease prediction model using weather and soil sensor data.",
+      "Shipped a Python + PyQt monitoring dashboard for near-real-time field visibility.",
+    ],
+  },
+  {
+    role: "Data Analyst",
+    company: "Amazon.com (Hyderabad)",
+    timeframe: "Dec 2018 — Sep 2019",
+    bullets: [
+      "Led delivery preference experiments that improved customer satisfaction by 4% in Japan.",
+      "Automated KPI dashboards in Tableau for daily, weekly, and monthly decision cycles.",
     ],
   },
 ];
 
 const caseStudies = [
   {
-    title: "Revenue Ops Agent",
-    metric: "+37% qualified demos",
+    title: "Document Intelligence Platform",
+    metric: "90% faster reviews",
     description:
-      "Multi-agent system that scrapes founder podcasts, extracts buying signals, and fires bespoke Loom recaps via n8n.",
+      "Document extraction system that classifies, retrieves, and summarizes large repositories into audit-ready outputs.",
   },
   {
-    title: "Compliance RAG",
-    metric: "4x faster reviews",
+    title: "Sales Automation Agent",
+    metric: "Always-on outreach",
     description:
-      "Snowflake + Bedrock Titan powering legal-grade document recall with guardrails mapped to SOC 2 requirements.",
+      "n8n + LinkedIn automation that captures signals, triggers follow-ups, and keeps pipeline momentum visible.",
   },
   {
-    title: "Product Pulse",
-    metric: "30M events / day",
+    title: "Enterprise RAG Delivery",
+    metric: "Production-ready from day one",
     description:
-      "Kafka + dbt + Looker telemetry platform that keeps churn, ARPU, and fraud insights real-time for product leads.",
+      "RAG applications and copilots integrated into existing stacks with observability, guardrails, and handoff docs.",
   },
 ];
 
 const stack = [
   "Python",
-  "LangChain",
-  "CrewAI",
-  "AWS",
-  "Snowflake",
-  "dbt",
-  "Terraform",
-  "SQL",
-  "n8n",
   "RAG",
-  "React",
-  "Next.js",
-  "Kafka",
-  "Tableau",
-  "Java",
-  "Zapier",
-  "PyTorch",
-  "Hugging Face",
+  "LLMs",
+  "AI Agents",
+  "Workflow Automation",
+  "Document Extraction",
+  "LangChain",
+  "LangGraph",
+  "Langfuse",
+  "FastAPI",
+  "Docker",
+  "Celery",
+  "Redis",
+  "PostgreSQL",
+  "Alembic",
+  "MCP",
+  "n8n",
+  "Cloud Computing",
+  "AI Infrastructure",
 ];
 
-const education = [
+const credentials = [
   {
-    program: "MS Information Systems",
-    school: "Northeastern University, Boston",
-    year: "2023",
+    program: "Research Fellow (Data & AI)",
+    school: "Indian Institute of Technology Bombay",
+    year: "2019 — 2020",
   },
   {
-    program: "B.Tech Computer Science",
-    school: "Shiv Nadar University, India",
-    year: "2018",
+    program: "Ex-Amazon Engineer & Analyst",
+    school: "Seattle & Hyderabad",
+    year: "2018 — 2023",
   },
 ];
 
 const stats = [
-  { label: "Pipelines automated", value: "25+" },
-  { label: "LLM agents deployed", value: "12" },
-  { label: "Data saved / month", value: "$40K" },
+  { label: "Review time reduced", value: "90%" },
+  { label: "Marketplaces served", value: "30" },
+  { label: "AI systems shipped", value: "25+" },
 ];
 
 const panel =
@@ -185,7 +217,7 @@ export default function Home() {
             className="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-100 transition hover:text-[#14f1d9]"
           >
             <Image src="/logo.png" alt="goBIGai logo" width={36} height={36} className="h-9 w-9" />
-            goBIGai<span className="text-[#14f1d9]">.</span>org
+            goBIGai
           </button>
           <div className="hidden gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 md:flex">
             {sections.slice(1).map((section) => (
@@ -220,10 +252,12 @@ export default function Home() {
                 <Sparkles size={16} className="text-[#14f1d9]" /> AI consulting for data-rich teams
               </div>
               <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl text-slate-100">
-                We design, ship, and scale AI systems that keep revenue teams ahead of the signal.
+                Transforming scattered operations into compounding AI systems that quietly grow your business every day.
               </h1>
               <p className="max-w-3xl text-lg text-slate-300">
-                goBIGai is an AI consulting firm led by Anirudh Voruganti. We blend advisory, delivery pods, and production operations so leaders can deploy agentic workflows, safer RAG, and observability without pausing the business.
+                goBIGai works with founders, operators, and organizations overwhelmed by manual workflows, unstructured documents,
+                and disconnected tools. We design production-grade RAG applications, AI agents, and document extraction systems that
+                integrate into your stack and deliver measurable impact.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <button
@@ -265,14 +299,14 @@ export default function Home() {
                     alt="Anirudh Voruganti portrait"
                     width={1200}
                     height={1600}
-                    className="h-[360px] w-full object-cover"
+                    className="h-[360px] w-full object-cover object-top"
                     priority
                   />
                 </div>
                 <div className="flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-300">
-                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">Data + AI Advisory</span>
-                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">Agentic Pods</span>
-                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">GTM Automation</span>
+                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">RAG Systems</span>
+                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">AI Agents</span>
+                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">Document Intelligence</span>
                 </div>
               </div>
             </div>
@@ -291,7 +325,7 @@ export default function Home() {
             <h2 className="mb-12 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl text-slate-100">
               <Zap className="text-[#14f1d9]" size={42} /> Consulting Offers
             </h2>
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
                 <div
                   key={service.title}
@@ -375,7 +409,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl text-center">
             <h2 className="text-4xl font-black uppercase sm:text-5xl text-slate-100">Stack I rely on</h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
-              Tooling across automation, experimentation, infra-as-code, and human-in-the-loop workflows for AI consulting retainers.
+              Tooling across RAG, agents, automation, and cloud-native delivery for production AI systems.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               {stack.map((skill) => (
@@ -395,21 +429,28 @@ export default function Home() {
             <div className={`${panel} p-8`}>
               <h2 className="text-4xl font-black uppercase text-slate-100">About goBIGai</h2>
               <p className="mt-6 text-lg leading-relaxed text-slate-300">
-                I blend an engineer’s love for distributed systems with a marketer’s need for velocity. Whether it’s shipping an AWS-native data mesh or crafting a Loom-ready narrative for a founder, goBIGai is the studio where both worlds meet. Currently progressing through the Data Lumina Freelancer curriculum to scale a boutique practice focused on measurable GenAI outcomes.
+                goBIGai turns AI curiosity into production-grade systems you can trust. We focus on the gap between a promising demo
+                and reliable deployment by shipping RAG applications, AI agents, and document extraction platforms that reduce manual
+                effort, accelerate decisions, and keep human teams in control.
+              </p>
+              <p className="mt-6 text-lg leading-relaxed text-slate-300">
+                Founded by Anirudh, an AI engineer and ex-Amazon builder with research experience at IIT Bombay, goBIGai brings
+                enterprise rigor to every engagement. Past work spans ecommerce, gaming, and education, including a document
+                extraction platform that turned a painful review bottleneck into a fast, auditable process.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-300">
-                <span className="rounded-full border border-[#14f1d9]/40 bg-[#14f1d9]/15 px-4 py-2">Hyderabad → Boston → Global</span>
-                <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-4 py-2">Remote-first</span>
-                <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-4 py-2">Time-to-value &lt; 3 weeks</span>
+                <span className="rounded-full border border-[#14f1d9]/40 bg-[#14f1d9]/15 px-4 py-2">Hyderabad • Global delivery</span>
+                <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-4 py-2">Production-first</span>
+                <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-4 py-2">Responsible AI systems</span>
               </div>
             </div>
             <div className="space-y-6">
               <div className={`${panel} p-8`}>
                 <h3 className="flex items-center gap-3 text-2xl font-black text-slate-100">
-                  <GraduationCap className="text-[#14f1d9]" /> Education
+                  <GraduationCap className="text-[#14f1d9]" /> Credentials
                 </h3>
                 <div className="mt-6 space-y-4">
-                  {education.map((item) => (
+                  {credentials.map((item) => (
                     <div key={item.program} className="border-l-2 border-[#14f1d9]/60 pl-4">
                       <p className="text-xl font-black text-slate-100">{item.program}</p>
                       <p className="text-lg font-semibold text-slate-300">{item.school}</p>
@@ -423,9 +464,9 @@ export default function Home() {
                   <Terminal className="text-[#14f1d9]" /> Recent drops
                 </h3>
                 <ul className="mt-4 space-y-3 text-base text-slate-300">
-                  <li>Podcast intelligence bot for a fintech CMO, built with Whisper + GPT-4o.</li>
-                  <li>Sales room command center that syncs Notion, Slack, and Airtable in real-time.</li>
-                  <li>dbt-powered revenue dashboards for a global gaming leader.</li>
+                  <li>Enterprise document parser that automates classification and extraction at scale.</li>
+                  <li>LinkedIn-aware sales automation agent orchestrated in n8n for faster follow-ups.</li>
+                  <li>Full-stack web build for a software consultancy to improve enterprise credibility.</li>
                 </ul>
               </div>
             </div>
@@ -437,8 +478,39 @@ export default function Home() {
             <p className="text-xs font-mono uppercase tracking-[0.35em] text-slate-400">Ready when you are</p>
             <h2 className="mt-4 text-5xl font-black uppercase sm:text-6xl text-slate-100">Let’s build responsibly.</h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-300">
-              Whether you need a skunkworks AI pod, marketing ops automation, or reliable data foundations, goBIGai consults, ships, and operates with you. Drop a note, connect on LinkedIn, or peek into the GitHub experiments.
+              If you’re ready to turn one painful workflow into a scalable AI system, start by sharing the process that’s slowing
+              your team down. We’ll map a tailored goBIGai solution and ship it with observability, safety, and handoff docs.
             </p>
+            <div className="mt-8 grid gap-4 rounded-2xl border border-[#14f1d9]/15 bg-[#0f172b]/60 p-6 text-left text-slate-300 shadow-[0_20px_60px_rgba(5,11,24,0.5)] md:grid-cols-2">
+              <div className="flex gap-3">
+                <span className="text-[#14f1d9]">🔍</span>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-wide text-slate-100">Discovery session</p>
+                  <p className="text-sm">Analyze your workflows and data to identify automation opportunities.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-[#14f1d9]">⚙️</span>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-wide text-slate-100">Custom solution design</p>
+                  <p className="text-sm">Architect AI systems tailored to your knowledge base and processes.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-[#14f1d9]">🔄</span>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-wide text-slate-100">Implementation</p>
+                  <p className="text-sm">Integrate into your existing stack and launch with confidence.</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-[#14f1d9]">📈</span>
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-wide text-slate-100">Optimization</p>
+                  <p className="text-sm">Continuously refine accuracy, reliability, and business impact.</p>
+                </div>
+              </div>
+            </div>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 md:flex-row">
               <a
                 href="mailto:founder@gobigai.org"
