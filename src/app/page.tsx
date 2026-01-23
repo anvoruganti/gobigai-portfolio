@@ -139,7 +139,7 @@ const stats = [
 ];
 
 const panel =
-  "rounded-2xl border border-slate-200/70 bg-white/80 shadow-[0_15px_60px_rgba(15,23,42,0.08)] backdrop-blur";
+  "rounded-2xl border border-[#14f1d9]/12 bg-[#0f172b]/70 shadow-[0_15px_60px_rgba(5,11,24,0.6)] backdrop-blur";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -171,22 +171,23 @@ export default function Home() {
 
   return (
     <div
-      className={`relative min-h-screen bg-gradient-to-b from-[#f9fcff] via-[#f1f5ff] to-[#e6f7ff] text-slate-900 ${
+      className={`relative min-h-screen bg-gradient-to-b from-[#0f172b] via-[#0b1222] to-[#050b18] text-slate-100 ${
         isLoaded ? "opacity-100" : "opacity-0"
       } transition-opacity duration-700`}
     >
       <div className="noise-overlay" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(20,241,217,0.14)_0,transparent_30%),radial-gradient(circle_at_80%_0,rgba(122,91,255,0.12)_0,transparent_30%),radial-gradient(circle_at_80%_70%,rgba(14,165,233,0.12)_0,transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(20,241,217,0.18)_0,transparent_35%),radial-gradient(circle_at_85%_0,rgba(20,241,217,0.08)_0,transparent_35%),radial-gradient(circle_at_80%_70%,rgba(15,23,43,0.6)_0,transparent_45%)]" />
 
-      <nav className="fixed top-0 left-0 z-50 w-full border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
+      <nav className="fixed top-0 left-0 z-50 w-full border-b border-[#14f1d9]/15 bg-[#0f172b]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <button
             onClick={() => scrollTo("hero")}
-            className="text-2xl font-black tracking-tight text-slate-900 transition hover:text-[#14f1d9]"
+            className="flex items-center gap-3 text-2xl font-black tracking-tight text-slate-100 transition hover:text-[#14f1d9]"
           >
-            goBIGai<span className="text-[#7a5bff]">.</span>org
+            <Image src="/logo.png" alt="goBIGai logo" width={36} height={36} className="h-9 w-9" />
+            goBIGai<span className="text-[#14f1d9]">.</span>org
           </button>
-          <div className="hidden gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 md:flex">
+          <div className="hidden gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 md:flex">
             {sections.slice(1).map((section) => (
               <button
                 key={section}
@@ -194,8 +195,8 @@ export default function Home() {
                 onClick={() => scrollTo(section)}
                 className={`rounded-full border px-3 py-1 transition ${
                   activeSection === section
-                    ? "border-[#14f1d9]/70 bg-[#14f1d9]/10 text-slate-900 shadow-[0_10px_40px_rgba(20,241,217,0.25)]"
-                    : "border-transparent hover:border-[#7a5bff]/50 hover:text-slate-900"
+                    ? "border-[#14f1d9]/70 bg-[#14f1d9]/10 text-[#14f1d9] shadow-[0_10px_40px_rgba(20,241,217,0.25)]"
+                    : "border-transparent hover:border-[#14f1d9]/50 hover:text-slate-100"
                 }`}
               >
                 {section.replace("-", " ").toUpperCase()}
@@ -204,7 +205,7 @@ export default function Home() {
           </div>
           <button
             onClick={() => scrollTo("contact")}
-            className="flex items-center gap-2 rounded-full border border-[#14f1d9]/70 bg-[#14f1d9] px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-900 shadow-[0_12px_40px_rgba(20,241,217,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_60px_rgba(122,91,255,0.28)]"
+            className="flex items-center gap-2 rounded-full border border-[#14f1d9]/70 bg-[#14f1d9] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0f172b] shadow-[0_12px_40px_rgba(20,241,217,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_60px_rgba(20,241,217,0.35)]"
           >
             <Send size={14} /> Book a call
           </button>
@@ -215,26 +216,26 @@ export default function Home() {
         <section id="hero" className="relative overflow-hidden px-4 py-20">
           <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.95fr] lg:items-center">
             <div className="flex flex-col gap-8">
-              <div className="flex flex-wrap items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-600">
-                <Sparkles size={16} className="text-[#7a5bff]" /> AI consulting for data-rich teams
+              <div className="flex flex-wrap items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+                <Sparkles size={16} className="text-[#14f1d9]" /> AI consulting for data-rich teams
               </div>
-              <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl text-slate-900">
+              <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl text-slate-100">
                 We design, ship, and scale AI systems that keep revenue teams ahead of the signal.
               </h1>
-              <p className="max-w-3xl text-lg text-slate-600">
+              <p className="max-w-3xl text-lg text-slate-300">
                 goBIGai is an AI consulting firm led by Anirudh Voruganti. We blend advisory, delivery pods, and production operations so leaders can deploy agentic workflows, safer RAG, and observability without pausing the business.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <button
                   onClick={() => scrollTo("services")}
-                  className="flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#14f1d9] to-[#7a5bff] px-6 py-4 text-lg font-black text-slate-900 shadow-[0_20px_60px_rgba(122,91,255,0.35)] transition hover:-translate-y-1"
+                  className="flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#14f1d9] to-[#38f5e1] px-6 py-4 text-lg font-black text-[#0f172b] shadow-[0_20px_60px_rgba(20,241,217,0.35)] transition hover:-translate-y-1"
                 >
                   Explore offerings
                   <ArrowRight />
                 </button>
                 <button
                   onClick={() => scrollTo("work")}
-                  className="flex items-center justify-center gap-3 rounded-full border border-slate-200/80 bg-white/70 px-6 py-4 text-lg font-semibold text-slate-800 transition hover:-translate-y-1 hover:border-[#14f1d9]/70 hover:text-slate-900"
+                  className="flex items-center justify-center gap-3 rounded-full border border-[#14f1d9]/30 bg-[#0f172b]/40 px-6 py-4 text-lg font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-[#14f1d9]/70 hover:text-slate-100"
                 >
                   View credibility
                 </button>
@@ -242,23 +243,23 @@ export default function Home() {
               <div className="grid gap-6 sm:grid-cols-3">
                 {stats.map((stat) => (
                   <div key={stat.label} className={`${panel} p-4`}>
-                    <div className="text-4xl font-black text-[#0ea5e9]">{stat.value}</div>
-                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-600">{stat.label}</p>
+                    <div className="text-4xl font-black text-[#14f1d9]">{stat.value}</div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className={`${panel} relative overflow-hidden p-6`}> 
-              <div className="absolute inset-0 bg-gradient-to-br from-[#14f1d9]/12 via-transparent to-[#7a5bff]/10" />
+            <div className={`${panel} relative overflow-hidden p-6`}>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#14f1d9]/12 via-transparent to-[#14f1d9]/5" />
               <div className="relative flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-slate-500">Founder</p>
-                  <span className="rounded-full border border-[#14f1d9]/60 bg-[#14f1d9]/15 px-3 py-1 text-[11px] font-bold uppercase text-slate-800">
+                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-slate-400">Founder</p>
+                  <span className="rounded-full border border-[#14f1d9]/60 bg-[#14f1d9]/15 px-3 py-1 text-[11px] font-bold uppercase text-[#14f1d9]">
                     AI Consulting
                   </span>
                 </div>
-                <div className="relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white/70 shadow-inner">
+                <div className="relative overflow-hidden rounded-2xl border border-[#14f1d9]/20 bg-[#0b1222]/60 shadow-inner">
                   <Image
                     src="/profile.png"
                     alt="Anirudh Voruganti portrait"
@@ -268,27 +269,27 @@ export default function Home() {
                     priority
                   />
                 </div>
-                <div className="flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-600">
-                  <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-2">Data + AI Advisory</span>
-                  <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-2">Agentic Pods</span>
-                  <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-2">GTM Automation</span>
+                <div className="flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-300">
+                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">Data + AI Advisory</span>
+                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">Agentic Pods</span>
+                  <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-3 py-2">GTM Automation</span>
                 </div>
               </div>
             </div>
           </div>
           <button
             onClick={() => scrollTo("services")}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce rounded-full border border-slate-200/80 bg-white/70 p-3 text-slate-600 shadow-md"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce rounded-full border border-[#14f1d9]/30 bg-[#0f172b]/70 p-3 text-slate-200 shadow-md"
             aria-label="scroll to services"
           >
             <ChevronDown size={32} />
           </button>
         </section>
 
-        <section id="services" className="border-t border-slate-200/80 bg-white/80 px-4 py-20">
+        <section id="services" className="border-t border-[#14f1d9]/12 bg-[#0b1222]/80 px-4 py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="mb-12 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl text-slate-900">
-              <Zap className="text-[#7a5bff]" size={42} /> Consulting Offers
+            <h2 className="mb-12 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl text-slate-100">
+              <Zap className="text-[#14f1d9]" size={42} /> Consulting Offers
             </h2>
             <div className="grid gap-8 md:grid-cols-3">
               {services.map((service) => (
@@ -296,41 +297,41 @@ export default function Home() {
                   key={service.title}
                   className={`${panel} relative overflow-hidden p-6`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#14f1d9]/0 via-[#14f1d9]/6 to-[#7a5bff]/10" />
-                  <div className="relative mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#7a5bff]/12 text-[#7a5bff]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#14f1d9]/0 via-[#14f1d9]/10 to-[#14f1d9]/5" />
+                  <div className="relative mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#14f1d9]/12 text-[#14f1d9]">
                     {service.icon}
                   </div>
-                  <h3 className="relative text-2xl font-black text-slate-900">{service.title}</h3>
-                  <p className="relative mt-4 text-base leading-relaxed text-slate-600">{service.description}</p>
+                  <h3 className="relative text-2xl font-black text-slate-100">{service.title}</h3>
+                  <p className="relative mt-4 text-base leading-relaxed text-slate-300">{service.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="work" className="border-t border-slate-200/80 bg-gradient-to-b from-white via-[#f5f7ff] to-[#ebf6ff] px-4 py-20">
+        <section id="work" className="border-t border-[#14f1d9]/12 bg-gradient-to-b from-[#0b1222] via-[#0c1426] to-[#0f172b] px-4 py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="mb-10 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl text-slate-900">
-              <Briefcase className="text-[#7a5bff]" size={42} /> Track record
+            <h2 className="mb-10 flex items-center gap-3 text-4xl font-black uppercase sm:text-5xl text-slate-100">
+              <Briefcase className="text-[#14f1d9]" size={42} /> Track record
             </h2>
             <div className="space-y-6">
               {experiences.map((experience) => (
                 <article
                   key={experience.role}
-                  className={`${panel} relative overflow-hidden bg-gradient-to-br from-white via-white to-[#f4f7ff] p-8`}
+                  className={`${panel} relative overflow-hidden bg-gradient-to-br from-[#0f172b] via-[#0f172b] to-[#0b1222] p-8`}
                 >
                   {experience.highlight && (
-                    <div className="absolute right-4 top-4 rounded-full border border-[#14f1d9]/60 bg-[#14f1d9]/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-800">
+                    <div className="absolute right-4 top-4 rounded-full border border-[#14f1d9]/60 bg-[#14f1d9]/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#14f1d9]">
                       {experience.highlight}
                     </div>
                   )}
-                  <h3 className="text-3xl font-black text-slate-900">{experience.role}</h3>
-                  <div className="text-lg font-semibold text-[#0ea5e9]">{experience.company}</div>
-                  <p className="text-xs font-mono uppercase tracking-widest text-slate-500">{experience.timeframe}</p>
-                  <ul className="mt-4 space-y-2 text-base text-slate-700">
+                  <h3 className="text-3xl font-black text-slate-100">{experience.role}</h3>
+                  <div className="text-lg font-semibold text-[#14f1d9]">{experience.company}</div>
+                  <p className="text-xs font-mono uppercase tracking-widest text-slate-400">{experience.timeframe}</p>
+                  <ul className="mt-4 space-y-2 text-base text-slate-300">
                     {experience.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <span className="mt-1 h-2 w-2 rounded-full bg-[#7a5bff]" />
+                        <span className="mt-1 h-2 w-2 rounded-full bg-[#14f1d9]" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -341,18 +342,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="case-studies" className="border-t border-slate-200/80 bg-white/85 px-4 py-20">
+        <section id="case-studies" className="border-t border-[#14f1d9]/12 bg-[#0b1222]/85 px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="text-xs font-mono uppercase tracking-[0.3em] text-slate-500">Proof</p>
-                <h2 className="text-4xl font-black uppercase sm:text-5xl text-slate-900">Deployments with teeth</h2>
+                <p className="text-xs font-mono uppercase tracking-[0.3em] text-slate-400">Proof</p>
+                <h2 className="text-4xl font-black uppercase sm:text-5xl text-slate-100">Deployments with teeth</h2>
               </div>
               <a
                 href="https://linkedin.com/in/anirudh-voruganti"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-wide text-slate-800 transition hover:border-[#7a5bff]/60 hover:text-slate-900"
+                className="inline-flex items-center gap-2 rounded-full border border-[#14f1d9]/30 bg-[#0f172b]/60 px-4 py-2 text-xs font-bold uppercase tracking-wide text-slate-200 transition hover:border-[#14f1d9]/60 hover:text-slate-100"
               >
                 Full resume
                 <ExternalLink size={16} />
@@ -361,26 +362,26 @@ export default function Home() {
             <div className="mt-12 grid gap-8 md:grid-cols-3">
               {caseStudies.map((study) => (
                 <div key={study.title} className={`${panel} p-6`}>
-                  <p className="text-xs font-mono uppercase tracking-wide text-[#0ea5e9]">{study.metric}</p>
-                  <h3 className="mt-2 text-2xl font-black text-slate-900">{study.title}</h3>
-                  <p className="mt-3 text-base leading-relaxed text-slate-600">{study.description}</p>
+                  <p className="text-xs font-mono uppercase tracking-wide text-[#14f1d9]">{study.metric}</p>
+                  <h3 className="mt-2 text-2xl font-black text-slate-100">{study.title}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-slate-300">{study.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="stack" className="border-t border-slate-200/80 bg-gradient-to-b from-[#f5f7ff] to-[#e8f5ff] px-4 py-20">
+        <section id="stack" className="border-t border-[#14f1d9]/12 bg-gradient-to-b from-[#0f172b] to-[#0b1222] px-4 py-20">
           <div className="mx-auto max-w-6xl text-center">
-            <h2 className="text-4xl font-black uppercase sm:text-5xl text-slate-900">Stack I rely on</h2>
-            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">
+            <h2 className="text-4xl font-black uppercase sm:text-5xl text-slate-100">Stack I rely on</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
               Tooling across automation, experimentation, infra-as-code, and human-in-the-loop workflows for AI consulting retainers.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               {stack.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-slate-200/80 bg-white/80 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-800 shadow-[0_12px_40px_rgba(15,23,42,0.08)]"
+                  className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-5 py-3 text-sm font-bold uppercase tracking-wide text-slate-200 shadow-[0_12px_40px_rgba(5,11,24,0.45)]"
                 >
                   {skill}
                 </span>
@@ -389,39 +390,39 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="border-t border-slate-200/80 bg-white/85 px-4 py-20">
+        <section id="about" className="border-t border-[#14f1d9]/12 bg-[#0b1222]/85 px-4 py-20">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
             <div className={`${panel} p-8`}>
-              <h2 className="text-4xl font-black uppercase text-slate-900">About goBIGai</h2>
-              <p className="mt-6 text-lg leading-relaxed text-slate-600">
+              <h2 className="text-4xl font-black uppercase text-slate-100">About goBIGai</h2>
+              <p className="mt-6 text-lg leading-relaxed text-slate-300">
                 I blend an engineer’s love for distributed systems with a marketer’s need for velocity. Whether it’s shipping an AWS-native data mesh or crafting a Loom-ready narrative for a founder, goBIGai is the studio where both worlds meet. Currently progressing through the Data Lumina Freelancer curriculum to scale a boutique practice focused on measurable GenAI outcomes.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-700">
+              <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase text-slate-300">
                 <span className="rounded-full border border-[#14f1d9]/40 bg-[#14f1d9]/15 px-4 py-2">Hyderabad → Boston → Global</span>
-                <span className="rounded-full border border-slate-200 bg-white/80 px-4 py-2">Remote-first</span>
-                <span className="rounded-full border border-slate-200 bg-white/80 px-4 py-2">Time-to-value &lt; 3 weeks</span>
+                <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-4 py-2">Remote-first</span>
+                <span className="rounded-full border border-[#14f1d9]/20 bg-[#0f172b]/70 px-4 py-2">Time-to-value &lt; 3 weeks</span>
               </div>
             </div>
             <div className="space-y-6">
               <div className={`${panel} p-8`}>
-                <h3 className="flex items-center gap-3 text-2xl font-black text-slate-900">
-                  <GraduationCap className="text-[#7a5bff]" /> Education
+                <h3 className="flex items-center gap-3 text-2xl font-black text-slate-100">
+                  <GraduationCap className="text-[#14f1d9]" /> Education
                 </h3>
                 <div className="mt-6 space-y-4">
                   {education.map((item) => (
-                    <div key={item.program} className="border-l-2 border-[#0ea5e9]/60 pl-4">
-                      <p className="text-xl font-black text-slate-900">{item.program}</p>
-                      <p className="text-lg font-semibold text-slate-700">{item.school}</p>
-                      <p className="text-xs font-mono uppercase tracking-widest text-slate-500">{item.year}</p>
+                    <div key={item.program} className="border-l-2 border-[#14f1d9]/60 pl-4">
+                      <p className="text-xl font-black text-slate-100">{item.program}</p>
+                      <p className="text-lg font-semibold text-slate-300">{item.school}</p>
+                      <p className="text-xs font-mono uppercase tracking-widest text-slate-400">{item.year}</p>
                     </div>
                   ))}
                 </div>
               </div>
               <div className={`${panel} p-8`}>
-                <h3 className="flex items-center gap-3 text-2xl font-black text-slate-900">
-                  <Terminal className="text-[#7a5bff]" /> Recent drops
+                <h3 className="flex items-center gap-3 text-2xl font-black text-slate-100">
+                  <Terminal className="text-[#14f1d9]" /> Recent drops
                 </h3>
-                <ul className="mt-4 space-y-3 text-base text-slate-700">
+                <ul className="mt-4 space-y-3 text-base text-slate-300">
                   <li>Podcast intelligence bot for a fintech CMO, built with Whisper + GPT-4o.</li>
                   <li>Sales room command center that syncs Notion, Slack, and Airtable in real-time.</li>
                   <li>dbt-powered revenue dashboards for a global gaming leader.</li>
@@ -431,17 +432,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="border-t border-slate-200/80 bg-gradient-to-b from-[#e8f5ff] to-white px-4 py-20">
+        <section id="contact" className="border-t border-[#14f1d9]/12 bg-gradient-to-b from-[#0f172b] to-[#050b18] px-4 py-20">
           <div className="mx-auto max-w-5xl text-center">
-            <p className="text-xs font-mono uppercase tracking-[0.35em] text-slate-500">Ready when you are</p>
-            <h2 className="mt-4 text-5xl font-black uppercase sm:text-6xl text-slate-900">Let’s build responsibly.</h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
+            <p className="text-xs font-mono uppercase tracking-[0.35em] text-slate-400">Ready when you are</p>
+            <h2 className="mt-4 text-5xl font-black uppercase sm:text-6xl text-slate-100">Let’s build responsibly.</h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-300">
               Whether you need a skunkworks AI pod, marketing ops automation, or reliable data foundations, goBIGai consults, ships, and operates with you. Drop a note, connect on LinkedIn, or peek into the GitHub experiments.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 md:flex-row">
               <a
                 href="mailto:founder@gobigai.org"
-                className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#14f1d9] to-[#7a5bff] px-6 py-4 text-lg font-black text-slate-900 shadow-[0_25px_80px_rgba(122,91,255,0.3)] transition hover:-translate-y-1 md:w-auto"
+                className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#14f1d9] to-[#38f5e1] px-6 py-4 text-lg font-black text-[#0f172b] shadow-[0_25px_80px_rgba(20,241,217,0.3)] transition hover:-translate-y-1 md:w-auto"
               >
                 <Mail /> founder@gobigai.org
               </a>
@@ -449,7 +450,7 @@ export default function Home() {
                 href="https://linkedin.com/in/anirudh-voruganti"
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center gap-3 rounded-full border border-slate-200/80 bg-white/80 px-6 py-4 text-lg font-bold text-slate-800 transition hover:-translate-y-1 hover:border-[#7a5bff]/60 hover:text-slate-900 md:w-auto"
+                className="flex w-full items-center justify-center gap-3 rounded-full border border-[#14f1d9]/30 bg-[#0f172b]/70 px-6 py-4 text-lg font-bold text-slate-200 transition hover:-translate-y-1 hover:border-[#14f1d9]/60 hover:text-slate-100 md:w-auto"
               >
                 <Linkedin /> LinkedIn
               </a>
@@ -457,12 +458,12 @@ export default function Home() {
                 href="https://github.com/anvoruganti"
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full items-center justify-center gap-3 rounded-full border border-slate-200/80 bg-white/80 px-6 py-4 text-lg font-bold text-slate-800 transition hover:-translate-y-1 hover:border-[#7a5bff]/60 hover:text-slate-900 md:w-auto"
+                className="flex w-full items-center justify-center gap-3 rounded-full border border-[#14f1d9]/30 bg-[#0f172b]/70 px-6 py-4 text-lg font-bold text-slate-200 transition hover:-translate-y-1 hover:border-[#14f1d9]/60 hover:text-slate-100 md:w-auto"
               >
                 <Github /> GitHub
               </a>
             </div>
-            <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-200/80 pt-6 text-xs font-bold uppercase tracking-wide text-slate-500 sm:flex-row">
+            <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#14f1d9]/15 pt-6 text-xs font-bold uppercase tracking-wide text-slate-400 sm:flex-row">
               <span>© {new Date().getFullYear()} goBIGai.org</span>
               <span>Hyderabad • Boston • Remote</span>
               <span>AI Consulting • Data Systems</span>
