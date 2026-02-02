@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 
 const sections = ["hero", "services", "work", "case-studies", "stack", "about", "contact"];
+const bookingLink = "https://calendar.app.google/jAeQng95X2TXdAcn8";
 
 const services = [
   {
@@ -201,6 +202,10 @@ export default function Home() {
     }
   };
 
+  const handleBookCall = () => {
+    window.open(bookingLink, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div
       className={`relative min-h-screen bg-gradient-to-b from-[#0f172b] via-[#0b1222] to-[#050b18] text-slate-100 ${
@@ -236,7 +241,8 @@ export default function Home() {
             ))}
           </div>
           <button
-            onClick={() => scrollTo("contact")}
+            type="button"
+            onClick={handleBookCall}
             className="flex items-center gap-2 rounded-full border border-[#14f1d9]/70 bg-[#14f1d9] px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0f172b] shadow-[0_12px_40px_rgba(20,241,217,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_60px_rgba(20,241,217,0.35)]"
           >
             <Send size={14} /> Book a call
